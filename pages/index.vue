@@ -1,16 +1,15 @@
 <template>
   <div>
-    <h2>Home</h2>
-    <p>lorem ipsum</p>
+    <div class="grid grid-cols-3 gap-5">
+      <div v-for="product in products">
+        <ProductCard :product="product" />
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup>
+const { data: products } = await useFetch("https://fakestoreapi.com/products/");
 </script>
 
 <style lang="css" scoped>
