@@ -1,16 +1,18 @@
 <template>
   <div>
     <h2>About</h2>
-    <p>lorem ipsum</p>
+    <p>
+      {{ value }}
+      <br />
+      Thank You!
+    </p>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup>
+const {
+  data: { value },
+} = await useFetch("/api/description");
 </script>
 
 <style lang="css" scoped>
